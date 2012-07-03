@@ -57,7 +57,7 @@ foreach($html->find('head') as $e){
 foreach($html->find('body') as $e){
 
 
-    $newHeadContent= '<script type="text/javascript" src="http://controljs.googlecode.com/svn-history/trunk/control.js"/>';
+    $newHeadContent= '<script type="text/javascript" src="control.js"/>';
     
     $e->innertext = $e->innertext.$newHeadContent;
 }
