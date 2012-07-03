@@ -69,11 +69,6 @@ foreach($html->find('head') as $e){
 // Add base
 foreach($html->find('body') as $e){
 
-//$newHeadContent = '<script type="text/javascript">var cjsscript = document.createElement("script");';
-//$newHeadContent.='cjsscript.src = "http://mfronteer.com/controljs.php";';
-//$newHeadContent.='var cjssib = document.getElementsByTagName("script")[0];';
-//$newHeadContent.='cjssib.parentNode.insertBefore(cjsscript, cjssib);</script>';
-
 
     $newHeadContent= '<script type="text/javascript" src="http://controljs.googlecode.com/svn-history/trunk/control.js"/>';
     
@@ -81,13 +76,7 @@ foreach($html->find('body') as $e){
 }
 
 
-// remove all image
-//foreach($html->find('img') as $e)
-  //  $e->outertext = '';
 
-// replace all input
-//foreach($html->find('input') as $e)
-  //  $e->outertext = 'my text';
 
 // dump contents
 echo $html;
