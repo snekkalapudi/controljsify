@@ -46,7 +46,7 @@ foreach($html->find('script') as $e){
 // Add base
 foreach($html->find('head') as $e){
     $newHeadContent = '<base href="'.$siteUrl.'"/><!--[if IE]><![endif]-->';
-   // $newHeadContent.= '<script type="text/javascript" src="http://controljs.googlecode.com/svn-history/trunk/control.js"/>';
+   // $newHeadContent.= '<script type="text/javascript" src="control.js"/>';
     
     $e->innertext = $newHeadContent.$e->innertext;
 }
