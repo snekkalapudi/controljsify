@@ -1,36 +1,23 @@
 <?php
-// example of how to modify HTML contents
+
 include('simplehtmldom_1_5/simple_html_dom.php');
-
-
-
-
 
 if($_GET['url'] == ''){
 	$_GET['url'] = 'http://www.google.com/';
 }
 
 
-
-
-
 $siteUrl = $_GET['url'];
 // get DOM from URL or file
 $html = file_get_html($siteUrl);
-
-
-
 
 if($_GET['cj'] == 'false'){
 
 // Add base
 foreach($html->find('head') as $e){
     $newHeadContent = '<base href="'.$siteUrl.'"/>';
-   // $newHeadContent.= '<script type="text/javascript" src="http://controljs.googlecode.com/svn-history/trunk/control.js"/>';
-    
     $e->innertext = $newHeadContent.$e->innertext;
 }
-
 
 	echo $html;
 	return;
@@ -38,7 +25,7 @@ foreach($html->find('head') as $e){
 }
 
 
-// remove all image
+// Change the scr type. Need to use datacjssrc instead of datacjs-src to make simple html dom compatiable.
 foreach($html->find('script') as $e){
 	if($e->type == ''){
 		//echo "Type is empty ...";
@@ -81,6 +68,6 @@ foreach($html->find('body') as $e){
 // dump contents
 echo $html;
 
-$html->save('result.html');
+//$html->save('result.html');
 
 ?>
